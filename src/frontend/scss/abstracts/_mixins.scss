@@ -1,0 +1,25 @@
+@mixin flex(
+  $justify: center,
+  $align: center,
+  $direction: row,
+  $gap: 0
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin grid($columns, $gap: 0) {
+  display: grid;
+  grid-template-columns: $columns;
+  gap: $gap;
+}
+
+@mixin card($padding: 20px) {
+  background-color: #fff;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: $padding;
+}

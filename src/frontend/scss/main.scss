@@ -1,0 +1,238 @@
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+@import 'base/reset';
+
+header {
+  @include flex(space-between);
+  border-bottom: 1px solid $gray;
+  padding: 20px;
+
+  nav {
+    @include flex(center, center, row, 20px);
+    font-weight: bold;
+
+    h3 {
+      font-size: 25px;
+    }
+
+    ul {
+      @include flex;
+      list-style: none;
+
+      li {
+        padding: 20px;
+      }
+    }
+  }
+
+  div {
+    @include flex(center, center, row, 15px);
+
+    input {
+      width: 300px;
+      padding: 15px;
+      border-radius: 50px;
+      border: none;
+      background-color: $light-gray;
+      color: $gray;
+    }
+
+    i {
+      font-size: 25px;
+      color: $icon-gray;
+    }
+  }
+}
+main { margin-top: 20px; flex: 1; padding-inline: 15rem; display: grid; grid-template-columns: 1fr;
+
+  article { padding: 20px; margin-bottom: 100px; }
+  .hero-section {
+    @include grid(300px 1fr);
+    align-items: center;
+    justify-content: space-between;
+    height: 400px;
+    padding: 100px;
+    background-color: $hero-red;
+    border-radius: $radius;
+    box-shadow: $shadow;
+
+    .hero-content {
+      @include flex(space-between, flex-start, column, 70px);
+
+      h1 {
+        font-size: 40px;
+      }
+    }
+
+    .hero-image {
+      @include flex;
+    }
+  }
+  .story-section {
+    @include grid(400px 1fr, 100px);
+
+    .story-text {
+      @include flex(flex-start, flex-start, column, 10px);
+
+      h1 {
+        font-size: 35px;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: $radius;
+      box-shadow: $shadow;
+    }
+  }
+  .product-section {
+    @include grid(400px 1fr, 100px);
+
+    img {
+      width: 100%;
+    }
+
+    .product-info {
+      @include card(30px);
+      width: 100%;
+      margin-inline: 10px 20px;
+
+      .oi {
+        @include flex(flex-start, flex-start, column, 20px);
+
+        .product-description {
+          @include flex(flex-start, flex-start, column, 10px);
+        }
+      }
+    }
+  }
+   .instagram-section {
+    @include flex(center, center, column, 50px);
+
+    .instagram-grid {
+      @include grid(repeat(4, 1fr), 20px);
+    }
+
+    img {
+      width: 100%;
+      border-radius: $radius;
+      box-shadow: $shadow;
+    }
+
+    form {
+      @include flex(center, center, column, 20px);
+    }
+  }
+  .features-section {
+    @include flex(center, center, row, 80px);
+    overflow: hidden;
+
+    .feature {
+      @include flex(center, center, column, 20px);
+      text-align: center;
+
+      i {
+        font-size: 40px;
+      }
+
+      div {
+        @include flex(center, center, column, 5px);
+      }
+    }
+  }
+  .faq-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .faq-header{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        button{
+           border-radius: 50px;
+           width: 130px;
+           padding: 15px;
+           cursor: pointer;
+           background-color: white;
+           border: 1px solid black;
+           font-weight: bold;
+        }
+        h1{
+            font-size: 40px;
+        }
+    }
+    .faq-list{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 5px;
+        li{
+            background-color: rgb(214, 214, 214);
+            font-weight: bold;
+            list-style: none;
+            border-radius: 50px;
+            padding: 15px;
+            ul{
+                display: none;
+            }
+            .faq-header1{
+                display: flex;
+                justify-content: space-between; 
+            }
+        }
+
+    }
+  }
+  .reviews-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+
+    .reviews-cta{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            h1{
+                font-size:  35px;
+            }
+        }
+    }
+    .reviews{
+        display: flex;
+        gap: 20px;
+        .reviews-column{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .review-card{
+            border-radius: $radius;
+            box-shadow: $shadow;
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+        }
+
+    }
+
+    button{
+           border-radius: 50px;
+           width: fit-content;
+           padding: 15px;
+           cursor: pointer;
+           background-color: rgb(201, 0, 0);
+           color: white;
+           border: 1px solid rgb(201, 0, 0);
+           font-weight: bold;
+    }
+  }
+}
